@@ -6,6 +6,7 @@ Created on Fri Aug 30 10:37:22 2019
 """
 import numpy as np
 from hyperparams_initialization import hyperparams_initialization
+from extraction_performances import extraction_performances
 from tqdm import tqdm
 import keras
 from keras import backend as K
@@ -36,7 +37,7 @@ def IAHOS(rounds,method,limits,attempts,variables,iterations,Classifier,
             del classifier
             del history
             K.clear_session()
-        general_perf,general_perf2=extraction_performances(validation_accuracy,training_accuracy)
+        general_perf,general_perf2=extraction_performances(validation_accuracy,training_accuracy,variables,iterations,attempts)
         del training_accuracy
         del validation_accuracy
         
@@ -82,4 +83,4 @@ def IAHOS(rounds,method,limits,attempts,variables,iterations,Classifier,
             indeces.append(np.sort(index))
         limits = best_hp
         temp_p_values = p_values
-    return temp_general_perf,temp_general_perf2,old_general_perf,old_general_perf2
+    return temp_general_perf,temp_general_perf2,old_general_perf,old_general_perf2,final
