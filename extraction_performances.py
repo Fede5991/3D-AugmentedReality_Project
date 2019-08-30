@@ -1,6 +1,6 @@
 import numpy as np
 
-def extraction_performances(validation_accuracy,training_accuracy):
+def extraction_performances(validation_accuracy,training_accuracy,variables,iterations,attempts):
     performances=np.zeros((variables,iterations))
     performances2=np.zeros((variables,iterations))
     a = attempts
