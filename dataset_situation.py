@@ -141,7 +141,7 @@ def creation_datasets(maximum,ratio,ratio_images,reduction,dataset_classificatio
         training_samples = 55*56
         labels = np.zeros((training_samples,55))
         for i in range(training_samples):
-            j=int(i%55)
+            j=int(i/56)
             labels[i,j]=1
         np.save('labels',labels)
         np.save('dataset',dataset)
