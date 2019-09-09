@@ -57,7 +57,7 @@ def plot_IAHOS(y,ogp,ogp2,tgp,tgp2):
     fig.update_layout(height=600, width=800)
     if not os.path.exists("images"):
         os.mkdir("images")
-    fig.write_image('images/IAHOS_'+str(model)+'.png')
+    fig.write_image('images/IAHOS.png')
     fig.show()
 
 def plot_model(volume):    
